@@ -100,4 +100,4 @@ class Interpolacja:
             plt.ylabel("Oś Y")
             plt.show()
 
-#Autor: Mateusz Czech UEK 2023
+#Autor: Mateusz Czech 2023
