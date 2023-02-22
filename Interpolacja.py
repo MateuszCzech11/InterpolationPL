@@ -62,16 +62,16 @@ class Interpolacja:
         Funkcja wykonuje interpolację Newtona na postawie znanych wartości X[i] i odpowiadających im Y[i],
         a następnie oblicza wartość tego wielomianu N(xp) dla podanej wartości xp (x podane)
 
-        dłX - zmienna pomocnicza określająca ilość węzłów (inaczej długość arraya X)
+        dlX - zmienna pomocnicza określająca ilość węzłów (inaczej długość arraya X)
         Yc - kopia wartości funkcji z podanych węzłów - konieczna w celu obliczania N(xp) bez zmiany wartości początkowych listy Y
         """
-        dłX = len(self.X)
+        dlX = len(self.X)
         Yc = self.Y.copy()
-        for j in range(1, dłX):
-            for i in range(dłX-1, j-1, -1):
+        for j in range(1, dlX):
+            for i in range(dlX-1, j-1, -1):
                 Yc[i] = (Yc[i] - Yc[i-1]) / (self.X[i] - self.X[i-j])
         wynik = Yc[-1]
-        for i in range(dłX-2, -1, -1):
+        for i in range(dlX-2, -1, -1):
             wynik = Yc[i] + (xp - self.X[i]) * wynik
         return wynik
 
@@ -100,4 +100,4 @@ class Interpolacja:
             plt.ylabel("Oś Y")
             plt.show()
 
-#Autor: Mateusz Czech 2023
+#Autor: Mateusz Czech UEK 2023
